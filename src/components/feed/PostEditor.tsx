@@ -1,5 +1,6 @@
 // src/components/feed/PostEditor.tsx
 import React, { useState } from "react";
+import { Smile, Paperclip, Image } from "lucide-react";
 import Button from "../ui/Button";
 
 interface Props {
@@ -35,9 +36,9 @@ const PostEditor: React.FC<Props> = ({ onPost, isAuthenticated, onRequireAuth })
   };
 
   return (
-    <section className="bg-gray-200 rounded-2xl p-4 sm:p-6 mb-6">
+    <section className="bg-black/5 rounded-3xl p-2 ">
       {/* White content area */}
-      <div className="bg-white rounded-xl p-4 sm:p-5 mb-6">
+      <div className="bg-white rounded-2xl border border-gray-200 p-4 ">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2 text-xs sm:text-sm">
             <button
@@ -69,15 +70,15 @@ const PostEditor: React.FC<Props> = ({ onPost, isAuthenticated, onRequireAuth })
         />
 
         <div className="mt-3 flex items-center justify-between">
-          <div className="flex items-center gap-2 text-xl text-gray-400">
+          <div className="flex items-center gap-2 text-gray-400">
             <button type="button" onClick={handleToolbarClick} className="hover:text-indigo-500 transition-colors">
-              🙂
+              <Smile className="w-5 h-5" />
             </button>
             <button type="button" onClick={handleToolbarClick} className="hover:text-indigo-500 transition-colors">
-              📎
+              <Paperclip className="w-5 h-5" />
             </button>
             <button type="button" onClick={handleToolbarClick} className="hover:text-indigo-500 transition-colors">
-              🖼️
+              <Image className="w-5 h-5" />
             </button>
           </div>
 

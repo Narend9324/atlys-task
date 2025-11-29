@@ -1,5 +1,6 @@
 // src/components/feed/PostCard.tsx
 import React from "react";
+import { Heart, MessageCircle, Share2 } from "lucide-react";
 
 interface PostCardProps {
   content: string;
@@ -12,9 +13,9 @@ const PostCard: React.FC<PostCardProps> = ({ content, onInteraction }) => {
   };
 
   return (
-    <article className="bg-gray-200 rounded-2xl p-4 sm:p-6 mb-6">
+    <article className="bg-black/5 rounded-3xl p-2 mb-6">
       {/* White content area */}
-      <div className="bg-white rounded-xl p-5 mb-6">
+      <div className="bg-white rounded-2xl border border-gray-200 p-4 mb-2">
         <header className="flex items-center gap-3 mb-3">
           <div className="h-10 w-10 rounded-full bg-gray-200" />
           <div>
@@ -26,19 +27,19 @@ const PostCard: React.FC<PostCardProps> = ({ content, onInteraction }) => {
         <p className="text-sm text-gray-800 leading-relaxed">{content}</p>
       </div>
 
-      {/* Bottom section with interaction buttons inside bg-gray-200 */}
-      <footer className="px-1">
+      {/* Bottom section with interaction buttons inside bg-black/5 */}
+      <footer className="px-2">
         <div className="flex items-center gap-6">
           <button type="button" onClick={handleClick} className="flex items-center gap-2 text-gray-600 hover:text-indigo-600 transition-colors">
-            <span>❤️</span>
+            <Heart className="w-4 h-4" />
             <span className="text-sm">Like</span>
           </button>
           <button type="button" onClick={handleClick} className="flex items-center gap-2 text-gray-600 hover:text-indigo-600 transition-colors">
-            <span>💬</span>
+            <MessageCircle className="w-4 h-4" />
             <span className="text-sm">Comment</span>
           </button>
           <button type="button" onClick={handleClick} className="flex items-center gap-2 text-gray-600 hover:text-indigo-600 transition-colors">
-            <span>🔗</span>
+            <Share2 className="w-4 h-4" />
             <span className="text-sm">Share</span>
           </button>
         </div>

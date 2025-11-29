@@ -1,6 +1,7 @@
 // src/components/auth/SignUpForm.tsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserPlus } from "lucide-react";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import { useAuth } from "../../context/AuthContext";
@@ -31,7 +32,7 @@ const SignUpForm: React.FC<Props> = ({ switchToSignIn, onSuccess }) => {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="flex flex-col items-center gap-3 mb-2">
         <div className="h-11 w-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center">
-          <span className="text-lg">🔓</span>
+          <UserPlus className="w-5 h-5 text-gray-600" />
         </div>
         <h2 className="text-lg sm:text-xl font-semibold text-center">Create an account to continue</h2>
       </div>

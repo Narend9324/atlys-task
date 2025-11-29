@@ -1,5 +1,6 @@
 // src/components/layout/Navbar.tsx
 import { Link } from "react-router-dom";
+import { LogIn, LogOut } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 
 const Navbar = () => {
@@ -18,9 +19,10 @@ const Navbar = () => {
         <button
           type="button"
           onClick={logout}
-          className="text-xs sm:text-sm text-gray-600 hover:text-gray-900 transition-colors"
+          className="text-xs sm:text-sm text-gray-600 hover:text-gray-900 flex items-center gap-1 transition-colors"
         >
-          Logout
+          <span>Logout</span>
+          <LogOut className="w-4 h-4" />
         </button>
       ) : (
         <Link
@@ -28,7 +30,7 @@ const Navbar = () => {
           className="text-xs sm:text-sm text-gray-700 hover:text-gray-900 flex items-center gap-1 transition-colors"
         >
           <span>Login</span>
-          <span>🔓</span>
+          <LogIn className="w-4 h-4" />
         </Link>
       )}
     </nav>
