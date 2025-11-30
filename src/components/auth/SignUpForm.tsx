@@ -34,9 +34,9 @@ const SignUpForm: React.FC<Props> = ({ switchToSignIn, onSuccess }) => {
         <div className="h-11 w-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center">
           <UserPlus className="w-5 h-5 text-gray-600" />
         </div>
-        <h2 className="text-lg sm:text-xl font-semibold text-center">Create an account to continue</h2>
+        <h2 className="text-xl font-semibold text-center">Create an account to continue</h2>
       </div>
-      <p className="text-center text-gray-500 text-xs sm:text-sm mb-4">
+      <p className="text-center text-gray-500 text-sm font-normal mb-4">
         Create an account to access all the features on this app
       </p>
 
@@ -66,7 +66,7 @@ const SignUpForm: React.FC<Props> = ({ switchToSignIn, onSuccess }) => {
       <Button type="submit">Sign Up</Button>
 
       {switchToSignIn && (
-        <p className="text-center text-sm text-gray-500 mt-3">
+        <p className="text-center text-sm font-normal text-gray-500 mt-3">
           Already have an account?{" "}
           <button type="button" onClick={switchToSignIn} className="text-indigo-600 font-medium">
             Sign In

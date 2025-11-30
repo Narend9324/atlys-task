@@ -18,7 +18,7 @@ const SignInPage = () => {
             </Link>
             <Link
               to="/"
-              className="text-xs sm:text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-sm font-normal text-gray-600 hover:text-gray-900 transition-colors"
             >
               Back to home
             </Link>

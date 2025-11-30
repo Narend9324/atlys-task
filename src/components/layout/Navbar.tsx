@@ -12,14 +12,14 @@ const Navbar = () => {
         <div className="h-7 w-7 rounded-full border border-gray-900 flex items-center justify-center">
           <span className="text-xs font-semibold">o</span>
         </div>
-        <span className="text-sm sm:text-base font-semibold tracking-tight">foo-rum</span>
+        <span className="text-base font-semibold tracking-tight">foo-rum</span>
       </Link>
 
       {isAuthenticated ? (
         <button
           type="button"
           onClick={logout}
-          className="text-xs sm:text-sm text-gray-600 hover:text-gray-900 flex items-center gap-1 transition-colors"
+          className="text-sm font-medium text-gray-600 hover:text-gray-900 flex items-center gap-1 transition-colors"
         >
           <span>Logout</span>
           <LogOut className="w-4 h-4" />
@@ -27,7 +27,7 @@ const Navbar = () => {
       ) : (
         <Link
           to="/signin"
-          className="text-xs sm:text-sm text-gray-700 hover:text-gray-900 flex items-center gap-1 transition-colors"
+          className="text-sm font-medium text-gray-700 hover:text-gray-900 flex items-center gap-1 transition-colors"
         >
           <span>Login</span>
           <LogIn className="w-4 h-4" />

@@ -11,7 +11,7 @@ const FeedList: React.FC<FeedListProps> = ({ posts, onPostInteraction }) => {
     <div className="mt-8">
       {posts.length === 0 && (
         <div className="bg-white rounded-2xl shadow-md border border-gray-200 ring-1 ring-gray-100 p-8">
-          <p className="text-center text-gray-400 text-sm">
+          <p className="text-center text-gray-400 text-sm font-normal">
             No posts yet. Share something to start the conversation.
           </p>
         </div>

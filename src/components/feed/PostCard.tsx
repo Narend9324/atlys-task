@@ -20,27 +20,27 @@ const PostCard: React.FC<PostCardProps> = ({ content, onInteraction }) => {
           <div className="h-10 w-10 rounded-full bg-gray-200" />
           <div>
             <p className="text-sm font-semibold text-gray-900">Jane Doe</p>
-            <p className="text-xs text-gray-400">5 mins ago</p>
+            <p className="text-xs font-normal text-gray-400">5 mins ago</p>
           </div>
         </header>
 
-        <p className="text-sm text-gray-800 leading-relaxed">{content}</p>
+        <p className="text-sm font-normal text-gray-800 leading-relaxed">{content}</p>
       </div>
 
       {/* Bottom section with interaction buttons inside bg-black/5 */}
       <footer className="px-2">
         <div className="flex items-center gap-6">
-          <button type="button" onClick={handleClick} className="flex items-center gap-2 text-gray-600 hover:text-indigo-600 transition-colors">
+          <button type="button" onClick={handleClick} className="flex items-center gap-2 text-sm font-normal text-gray-600 hover:text-indigo-600 transition-colors">
             <Heart className="w-4 h-4" />
-            <span className="text-sm">Like</span>
+            <span>Like</span>
           </button>
-          <button type="button" onClick={handleClick} className="flex items-center gap-2 text-gray-600 hover:text-indigo-600 transition-colors">
+          <button type="button" onClick={handleClick} className="flex items-center gap-2 text-sm font-normal text-gray-600 hover:text-indigo-600 transition-colors">
             <MessageCircle className="w-4 h-4" />
-            <span className="text-sm">Comment</span>
+            <span>Comment</span>
           </button>
-          <button type="button" onClick={handleClick} className="flex items-center gap-2 text-gray-600 hover:text-indigo-600 transition-colors">
+          <button type="button" onClick={handleClick} className="flex items-center gap-2 text-sm font-normal text-gray-600 hover:text-indigo-600 transition-colors">
             <Share2 className="w-4 h-4" />
-            <span className="text-sm">Share</span>
+            <span>Share</span>
           </button>
         </div>
       </footer>

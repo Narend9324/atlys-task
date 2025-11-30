@@ -32,9 +32,9 @@ const SignInForm: React.FC<Props> = ({ switchToSignUp, onSuccess }) => {
         <div className="h-11 w-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center">
           <LogIn className="w-5 h-5 text-gray-600" />
         </div>
-        <h2 className="text-lg sm:text-xl font-semibold text-center">Sign in to continue</h2>
+        <h2 className="text-xl font-semibold text-center">Sign in to continue</h2>
       </div>
-      <p className="text-center text-gray-500 text-xs sm:text-sm mb-4">
+      <p className="text-center text-gray-500 text-sm font-normal mb-4">
         Sign in to access all the features on this app
       </p>
 
@@ -56,7 +56,7 @@ const SignInForm: React.FC<Props> = ({ switchToSignUp, onSuccess }) => {
       <Button type="submit">Sign In</Button>
 
       {switchToSignUp && (
-        <p className="text-center text-sm text-gray-500 mt-3">
+        <p className="text-center text-sm font-normal text-gray-500 mt-3">
           Do not have an account?{" "}
           <button type="button" onClick={switchToSignUp} className="text-indigo-600 font-medium">
             Sign Up
