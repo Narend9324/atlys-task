@@ -1,4 +1,3 @@
-// src/components/auth/SignInForm.tsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LogIn } from "lucide-react";
@@ -27,41 +26,47 @@ const SignInForm: React.FC<Props> = ({ switchToSignUp, onSuccess }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="flex flex-col items-center gap-3 mb-2">
-        <div className="h-11 w-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center">
-          <LogIn className="w-5 h-5 text-gray-600" />
+    <form onSubmit={handleSubmit} className="flex flex-col">
+      <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden p-6 sm:p-8 space-y-4">
+        <div className="flex flex-col items-center gap-3 mb-2">
+          <div className="h-11 w-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center">
+            <LogIn className="w-5 h-5 text-gray-600" />
+          </div>
+          <h2 className="text-xl font-semibold text-center text-gray-900">Sign in to continue</h2>
         </div>
-        <h2 className="text-xl font-semibold text-center">Sign in to continue</h2>
+        <p className="text-center text-gray-500 text-sm font-normal mb-4">
+          Sign in to access all the features on this app
+        </p>
+
+        <div className="space-y-4">
+          <Input
+            label="Email or username"
+            placeholder="Enter your email or username"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <Input
+            type="password"
+            label="Password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+
+        <Button type="submit" className="w-full mt-2">Sign In</Button>
       </div>
-      <p className="text-center text-gray-500 text-sm font-normal mb-4">
-        Sign in to access all the features on this app
-      </p>
-
-      <Input
-        label="Email or username"
-        placeholder="Enter your email or username"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-
-      <Input
-        type="password"
-        label="Password"
-        placeholder="Enter your password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-
-      <Button type="submit">Sign In</Button>
 
       {switchToSignUp && (
-        <p className="text-center text-sm font-normal text-gray-500 mt-3">
-          Do not have an account?{" "}
-          <button type="button" onClick={switchToSignUp} className="text-indigo-600 font-medium">
-            Sign Up
-          </button>
-        </p>
+        <div className="px-2 mt-4 text-center">
+          <p className="text-sm font-normal text-gray-500">
+            Do not have an account?{" "}
+            <button type="button" onClick={switchToSignUp} className="text-indigo-600 font-medium hover:text-indigo-700 transition-colors">
+              Sign Up
+            </button>
+          </p>
+        </div>
       )}
     </form>
   );

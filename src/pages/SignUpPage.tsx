@@ -1,12 +1,14 @@
 // src/pages/SignUpPage.tsx
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SignUpForm from "../components/auth/SignUpForm";
 import Container from "../components/layout/Container";
 import Card from "../components/ui/Card";
 
 const SignUpPage = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <header className="border-b border-gray-100">
         <Container>
           <div className="flex items-center justify-between py-4">
@@ -28,7 +30,7 @@ const SignUpPage = () => {
 
       <main className="flex items-center justify-center py-10 px-4">
         <Card>
-          <SignUpForm />
+          <SignUpForm switchToSignIn={() => navigate("/signin")} />
         </Card>
       </main>
     </div>

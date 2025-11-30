@@ -1,4 +1,3 @@
-// src/components/auth/SignUpForm.tsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserPlus } from "lucide-react";
@@ -29,49 +28,55 @@ const SignUpForm: React.FC<Props> = ({ switchToSignIn, onSuccess }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="flex flex-col items-center gap-3 mb-2">
-        <div className="h-11 w-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center">
-          <UserPlus className="w-5 h-5 text-gray-600" />
+    <form onSubmit={handleSubmit} className="flex flex-col">
+      <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden p-6 sm:p-8 space-y-4">
+        <div className="flex flex-col items-center gap-3 mb-2">
+          <div className="h-11 w-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center">
+            <UserPlus className="w-5 h-5 text-gray-600" />
+          </div>
+          <h2 className="text-xl font-semibold text-center text-gray-900">Create an account to continue</h2>
         </div>
-        <h2 className="text-xl font-semibold text-center">Create an account to continue</h2>
+        <p className="text-center text-gray-500 text-sm font-normal mb-4">
+          Create an account to access all the features on this app
+        </p>
+
+        <div className="space-y-4">
+          <Input
+            label="Email or username"
+            placeholder="Enter your email or username"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <Input
+            type="password"
+            label="Password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <Input
+            type="password"
+            label="Repeat password"
+            placeholder="Enter your password again"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </div>
+
+        <Button type="submit" className="w-full mt-2">Sign Up</Button>
       </div>
-      <p className="text-center text-gray-500 text-sm font-normal mb-4">
-        Create an account to access all the features on this app
-      </p>
-
-      <Input
-        label="Email or username"
-        placeholder="Enter your email or username"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-
-      <Input
-        type="password"
-        label="Password"
-        placeholder="Enter your password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-
-      <Input
-        type="password"
-        label="Repeat password"
-        placeholder="Enter your password again"
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-      />
-
-      <Button type="submit">Sign Up</Button>
 
       {switchToSignIn && (
-        <p className="text-center text-sm font-normal text-gray-500 mt-3">
-          Already have an account?{" "}
-          <button type="button" onClick={switchToSignIn} className="text-indigo-600 font-medium">
-            Sign In
-          </button>
-        </p>
+        <div className="px-2 mt-4 text-center">
+          <p className="text-sm font-normal text-gray-500">
+            Already have an account?{" "}
+            <button type="button" onClick={switchToSignIn} className="text-indigo-600 font-medium hover:text-indigo-700 transition-colors">
+              Sign In
+            </button>
+          </p>
+        </div>
       )}
     </form>
   );
