@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LogIn } from "lucide-react";
+import { LogIn, AlertCircle } from "lucide-react";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import { useAuth } from "../../context/AuthContext";
@@ -14,15 +14,21 @@ const SignInForm: React.FC<Props> = ({ switchToSignUp, onSuccess }) => {
   const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    login(email, password);
-    if (onSuccess) {
-      onSuccess();
+    setError("");
+    
+    if (login(email, password)) {
+      if (onSuccess) {
+        onSuccess();
+      }
+      navigate("/", { replace: true });
+    } else {
+      setError("Invalid email or password");
     }
-    navigate("/", { replace: true });
   };
 
   return (
@@ -38,12 +44,22 @@ const SignInForm: React.FC<Props> = ({ switchToSignUp, onSuccess }) => {
           Sign in to access all the features on this app
         </p>
 
+        {error && (
+          <div className="flex items-center gap-2 p-3 rounded-lg bg-red-50 text-red-600 text-sm">
+            <AlertCircle className="w-4 h-4" />
+            <span>{error}</span>
+          </div>
+        )}
+
         <div className="space-y-4">
           <Input
             label="Email or username"
             placeholder="Enter your email or username"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setError("");
+            }}
           />
 
           <Input
@@ -51,7 +67,10 @@ const SignInForm: React.FC<Props> = ({ switchToSignUp, onSuccess }) => {
             label="Password"
             placeholder="Enter your password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setError("");
+            }}
           />
         </div>
 
