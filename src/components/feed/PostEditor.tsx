@@ -141,7 +141,7 @@ const PostEditor: React.FC<Props> = ({ onPost, isAuthenticated, onRequireAuth })
 
           {/* Textarea */}
         <div className="flex gap-4 px-6 py-4">
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Smile className="w-5 h-5 text-gray-600" />
           </div>
           <textarea
@@ -153,7 +153,7 @@ const PostEditor: React.FC<Props> = ({ onPost, isAuthenticated, onRequireAuth })
         </div>
 
         {/* Bottom toolbar */}
-        <div className="flex items-center justify-between px-6 py-3 border-t border-gray-100">
+        <div className="flex items-center justify-between px-6 py-3 border-t-2 border-gray-100">
           <div className="flex items-center gap-3 text-gray-300">
             <button type="button" onClick={handleToolbarClick} className="hover:text-gray-600 transition-colors">
               <Smile className="w-5 h-5" />

@@ -12,7 +12,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-[2px]">
-      <div className="relative w-full max-w-md rounded-3xl bg-black/5 p-2">
+      <div className="relative w-full max-w-md rounded-3xl bg-gray-200 p-2">
         <button
           type="button"
           aria-label="Close"

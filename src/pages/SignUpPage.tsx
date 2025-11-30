@@ -8,7 +8,7 @@ const SignUpPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black/5">
       <header className="border-b border-gray-100">
         <Container>
           <div className="flex items-center justify-between py-4">
