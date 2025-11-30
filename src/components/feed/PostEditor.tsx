@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Smile, Paperclip, Plus, Trash2, Send, AlignLeft, AlignCenter, AlignRight, Code, List, ListOrdered } from "lucide-react";
-import Button from "../ui/Button";
 
 interface Props {
   onPost: (content: string) => void;
